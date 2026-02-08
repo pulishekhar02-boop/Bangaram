@@ -1,40 +1,94 @@
 body {
     font-family: Arial, sans-serif;
-    background: pink;
+    background: linear-gradient(45deg,#ff758c,#ff7eb3,#ffd1ff);
+    background-size: 400% 400%;
+    animation: gradientFlow 10s ease infinite;
     text-align: center;
     height: 100vh;
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
+@keyframes gradientFlow {
+    0% {background-position:0% 50%;}
+    50% {background-position:100% 50%;}
+    100% {background-position:0% 50%;}
+}
+
+/* Glass Proposal Card */
 .container {
-    background: white;
+    background: rgba(255,255,255,0.25);
+    backdrop-filter: blur(15px);
     padding: 30px;
     border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    box-shadow: 0 0 40px rgba(255,0,100,0.3);
+    z-index: 2;
+}
+
+/* Shiny Title */
+h1 {
+    background: linear-gradient(90deg,#d6d2d3,#ff99cc,#e60ebb);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: shine 3s linear infinite;
+}
+
+@keyframes shine {
+    0% {background-position:-200px;}
+    100% {background-position:200px;}
+}
+
+/* Floating Hearts */
+.hearts {
+    position: fixed;
+    width:100%;
+    height:100%;
+    z-index:-1;
+}
+
+.heart {
+    position:absolute;
+    font-size:20px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% {transform:translateY(100vh);opacity:0;}
+    50% {opacity:1;}
+    100% {transform:translateY(-10vh);opacity:0;}
 }
 
 img {
-    width: 250px;
-    margin: 20px 0;
+    width:260px;
+    border-radius:15px;
 }
 
+/* Buttons */
 button {
-    padding: 12px 25px;
-    margin: 10px;
-    border: none;
-    border-radius: 10px;
-    font-size: 18px;
-    cursor: pointer;
-    transition: 0.3s;
+    padding:12px 25px;
+    margin:10px;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
+/* YES Neon Glow */
 #yesBtn {
-    background: #ff4d6d;
-    color: white;
+    background:#ff4d6d;
+    color:white;
+    box-shadow:0 0 15px #ff4d6d,0 0 30px #ff4d6d;
 }
 
+/* NO Button */
 #noBtn {
-    background: #ccc;
+    background:#ccc;
+}
+@keyframes fade {
+0% {opacity:1; transform:translateY(0);}
+100% {opacity:0; transform:translateY(-20px);}
 }

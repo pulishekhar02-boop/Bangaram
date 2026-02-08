@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Bubu ❤️ Dudu Proposal</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Bubu ❤️ Dudu Proposal</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
 </head>
+
 <body>
+
+<!-- Romantic Background Music -->
+<audio id="loveMusic" loop>
+<source src="music/love.mp3" type="audio/mp3">
+</audio>
+
+
+<!-- Floating Hearts -->
+<div class="hearts"></div>
+
+<!-- Sparkle Cursor -->
+<div class="sparkle-container"></div>
 
 <div class="container">
 
-    <h1>Will You Be My Valentine? ❤️</h1>
+<h1 id="title">Will You Be My Valentine? ❤️</h1>
 
-    <img id="mainImage" src="images/start.png">
+<img id="mainImage" src="images/start.png">
 
+<div class="buttons">
+<button id="yesBtn">YES 💖</button>
+<button id="noBtn">NO 😢</button>
+</div>
 
-    <div class="buttons">
-        <button id="yesBtn">YES 💖</button>
-        <button id="noBtn">NO 😢</button>
-    </div>
-
-    <p id="message"></p>
+<p id="message"></p>
 
 </div>
 
